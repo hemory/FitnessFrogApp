@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using Treehouse.FitnessFrog.Data;
 using Treehouse.FitnessFrog.Models;
@@ -41,11 +39,21 @@ namespace Treehouse.FitnessFrog.Controllers
 
         public ActionResult Add()
         {
-            
+
             return View();
         }
 
-       
+
+        [ActionName("Add"), HttpPost]
+        public ActionResult AddPost()
+        {
+
+
+
+            return View();
+        }
+
+
 
         public ActionResult Edit(int? id)
         {
@@ -53,12 +61,12 @@ namespace Treehouse.FitnessFrog.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            
+
 
             return View();
         }
 
-       
+
 
         public ActionResult Delete(int? id)
         {
